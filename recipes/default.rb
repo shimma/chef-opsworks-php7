@@ -5,7 +5,7 @@ end
 
 bash 'overrride install php7.2' do
   code <<-EOH
-    apt install python-software-properties
+    apt -y install python-software-properties
     add-apt-repository -y ppa:ondrej/php
     add-apt-repository -y ppa:ondrej/apache2
 
