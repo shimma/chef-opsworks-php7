@@ -1,6 +1,6 @@
 ## Chef-OpsWorks-PHP7
 
-PHP7 installation cookbook for OpsWorks Ubuntu 14.04 LTS Stack with PHP Application.
+PHP7 cookbook for OpsWorks Ubuntu 14.04 LTS Stack with PHP Application.
 
 
 ## Usage
