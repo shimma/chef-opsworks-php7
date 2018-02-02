@@ -8,6 +8,7 @@ bash 'overrride install php7.2' do
     apt -y install python-software-properties
     add-apt-repository -y ppa:ondrej/php
     add-apt-repository -y ppa:ondrej/apache2
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
 
     apt -y update
     apt-get -y purge php5-fpm 
