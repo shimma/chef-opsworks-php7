@@ -6,13 +6,14 @@ end
 bash 'overrride install php7.2' do
   code <<-EOH
     apt install python-software-properties
-    add-apt-repository ppa:ondrej/php
+    add-apt-repository -y ppa:ondrej/php
+    add-apt-repository -y ppa:ondrej/apache2
 
-    apt update
-    apt-get purge php5-fpm 
-    apt-get --purge autoremove
+    apt -y update
+    apt-get -y purge php5-fpm 
+    apt-get -y --purge autoremove
 
-    apt install             \
+    apt -y install          \
       php7.2                \
       php7.2-mysql          \
       php7.2-json           \
@@ -25,7 +26,7 @@ bash 'overrride install php7.2' do
       libapache2-mod-php7.2 \
       libpcre3
 
-    a2dismod php5 || true
+    a2dismod php5
     a2enmod php7.2
   EOH
   notifies :restart, "service[apache2]"
