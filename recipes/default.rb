@@ -27,9 +27,13 @@ bash 'overrride install php7.2' do
       libapache2-mod-php7.2 \
       libpcre3
 
+    echo '' >/etc/apache2/mods-available/php5.load
+    echo '' >/etc/apache2/mods-available/php5.conf
+
     a2dismod php5
     a2enmod php7.2
   EOH
   notifies :restart, "service[apache2]"
   not_if "which php7.2"
 end
+
